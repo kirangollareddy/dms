@@ -1,4 +1,4 @@
-class APIResponseHandler {
+class APIResponse {
   #status
   #message
   #data
@@ -23,10 +23,10 @@ class APIResponseHandler {
       status: this.#status,
       message: this.#message,
       data: this.#data,
-      error: this.#error,
+      error: this.#error?this.#error.stack:undefined,
       statusCode: this.#statusCode
     }
   }
 }
 
-exports = APIResponseHandler;
+module.exports = APIResponse;

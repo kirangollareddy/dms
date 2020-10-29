@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const loginRoutes = require('./login.routes');
+const usersRouter = require('./users');
+module.exports = (app) => {
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+  /* GET home page. */
+  app.get('/', function(req, res) {
+    res.render('index', { title: 'Express' });
+  });
 
-module.exports = router;
+  app.use('/login', loginRoutes);
+  app.use('/users', usersRouter);
+
+
+};
