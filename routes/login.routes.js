@@ -3,7 +3,10 @@ const router = express.Router();
 const authController = require('../controllers/auth.controller');
 
 /* starts with /login. */
-router.post('/', authController.login);
+router.post('/', [
+  authController.validator,
+  authController.login
+]);
 
 router.get('/check', [
   authController.authMiddleware,

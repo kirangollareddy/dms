@@ -1,5 +1,9 @@
 const loginRoutes = require('./login.routes');
-const usersRouter = require('./users');
+const userRouter = require('./user.routes');
+const folderRouter = require('./folder.routes');
+const fileRouter = require('./file.routes');
+const dashboardRouter = require('./dashboard.routes');
+
 module.exports = (app) => {
 
   /* GET home page. */
@@ -8,7 +12,9 @@ module.exports = (app) => {
   });
 
   app.use('/login', loginRoutes);
-  app.use('/users', usersRouter);
-
+  app.use('/user', userRouter);
+  app.use('/folder', folderRouter);
+  app.use('/file', fileRouter);
+  app.use('/home', dashboardRouter);
 
 };
