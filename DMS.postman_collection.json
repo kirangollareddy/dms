@@ -1,0 +1,332 @@
+{
+	"info": {
+		"_postman_id": "037774c0-ecbc-48e0-a994-0d8406ec4b7c",
+		"name": "DMS",
+		"description": "Document Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"kiran\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/user/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"kiran\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Il9pZCI6IjVmOWQ2Mzg2Yjc0ZTRmYzBmZDY4ZTE2NCIsInVzZXJuYW1lIjoia2lyYW4ifSwianRpIjoiZGNhYTgxMDEtMjAyYS00NmU3LThkMWItMjVjYzYyNzc1YzM0IiwiaWF0IjoxNjA0MjEyNjg5LCJleHAiOjE2MDQyOTkwODl9.GkGN1HtF_l7A18aYxWxybG9rg7N1siD-NLF3grvQlTw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"kiran\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/login/check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"login",
+						"check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Folder - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Il9pZCI6IjVmOWQ2Mzg2Yjc0ZTRmYzBmZDY4ZTE2NCIsInVzZXJuYW1lIjoia2lyYW4ifSwianRpIjoiY2Q4NjczNjgtZDY3NS00MDNkLThkMmMtOWQzNGZlZDc5MTNlIiwiaWF0IjoxNjA0MjIyNTU3LCJleHAiOjE2MDQzMDg5NTd9.NGZECRg_NSrrpyrClakxvtGEgXJabNMCtUYu5P7MQdQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"folder_name\": \"My Folder3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/folder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"folder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "File - Create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Il9pZCI6IjVmOWQ2Mzg2Yjc0ZTRmYzBmZDY4ZTE2NCIsInVzZXJuYW1lIjoia2lyYW4ifSwianRpIjoiY2Q4NjczNjgtZDY3NS00MDNkLThkMmMtOWQzNGZlZDc5MTNlIiwiaWF0IjoxNjA0MjIyNTU3LCJleHAiOjE2MDQzMDg5NTd9.NGZECRg_NSrrpyrClakxvtGEgXJabNMCtUYu5P7MQdQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"file_name\": \"file2\",\n    \"folder_id\": \"5f9ef34029c5f6ce58f127b4\",\n    \"content\": \"content of file1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/file/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"file",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home - dashboard - files and folders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Il9pZCI6IjVmOWQ2Mzg2Yjc0ZTRmYzBmZDY4ZTE2NCIsInVzZXJuYW1lIjoia2lyYW4ifSwianRpIjoiMmU1ZDYzZDgtM2NjYy00ZTYzLTg5YWMtNzJkZDZmMjEzNjVmIiwiaWF0IjoxNjA0MjU0ODA5LCJleHAiOjE2MDQzNDEyMDl9.K5g-EwfS3zVNlQJwYQzseZGNA-ZCl-OSiu3DdEbUUyc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Files in Folder",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Il9pZCI6IjVmOWQ2Mzg2Yjc0ZTRmYzBmZDY4ZTE2NCIsInVzZXJuYW1lIjoia2lyYW4ifSwianRpIjoiMmU1ZDYzZDgtM2NjYy00ZTYzLTg5YWMtNzJkZDZmMjEzNjVmIiwiaWF0IjoxNjA0MjU0ODA5LCJleHAiOjE2MDQzNDEyMDl9.K5g-EwfS3zVNlQJwYQzseZGNA-ZCl-OSiu3DdEbUUyc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/folder/:id/files",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"folder",
+						":id",
+						"files"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5f9ef34029c5f6ce58f127b4",
+							"description": "Folder Id - String"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move File to Folder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7Il9pZCI6IjVmOWQ2Mzg2Yjc0ZTRmYzBmZDY4ZTE2NCIsInVzZXJuYW1lIjoia2lyYW4ifSwianRpIjoiMmU1ZDYzZDgtM2NjYy00ZTYzLTg5YWMtNzJkZDZmMjEzNjVmIiwiaWF0IjoxNjA0MjU0ODA5LCJleHAiOjE2MDQzNDEyMDl9.K5g-EwfS3zVNlQJwYQzseZGNA-ZCl-OSiu3DdEbUUyc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/file/:id/move/to/:folder_id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"file",
+						":id",
+						"move",
+						"to",
+						":folder_id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5f9f070cacb823d00fbe001c",
+							"description": "File Id - String"
+						},
+						{
+							"key": "folder_id",
+							"value": "5f9ef34029c5f6ce58f127b4",
+							"description": "Folder Id - String"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
